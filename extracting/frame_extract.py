@@ -15,7 +15,7 @@ import nltk, copy, collections, xml.sax
 from bs4 import BeautifulSoup
 
 from kicktionary import *
-from verbnet import *
+#from verbnet import *
 from ticker import *
 
 reload(sys)
@@ -38,7 +38,7 @@ class PossibleLU(object):
         return "{" + ",".join(self.lexical_units) + "}"
 
 
-def kicktionary_lookup_possible_lu(kicktionary, verbnet, ticker, verbose):
+def kicktionary_lookup_possible_lu(kicktionary, ticker, verbose):
     if verbose: print "Looking up tree roots in Kicktionary..."
 
     res = []
@@ -76,17 +76,14 @@ def kicktionary_lookup_possible_lu(kicktionary, verbnet, ticker, verbose):
                             # Add to list of found_lus for current ticker.
                             found_lus.append(lu.lemma+"."+lu.wordclass);
                             if verbose: print str(tree.tree_id) + " matches: " + lu.lemma + " " + lu.wordclass    
+         #           else:
+                    # Search in Verbnet
+        #                for vb in verbnet:
+       #                     print vb
+      #                      if node.lemma == vb.lemma and lu.lemma == vb.frame:
+     #                           found_lus.append(lu.lemma+"."+lu.wordclass)
+    #                            if verbose: print "Tree " + str(tree.tree_id) + " root matches Kicktionary lexical unit (via #Verbnet frame): " + tree.lexical_unit.lemma
             prev_node = node
-#                        else:
-#
-#                            # Search in Verbnet
-#                            for vb in verbnet:
-#                                if vb.lemma == tree.root:
-#                                    possibleLUs = [lu for lu in #kicktionary if lu.lemma == vb.frame]
-#                                    if len(possibleLUs) >= 1:
-#                                        if len(possibleLUs) == 1:
-#                                            tree.lexical_unit = possibleLUs[0]
-#                                            if verbose: print "Tree " #+ str(tree.tree_id) + " root matches Kicktionary lexical unit (via #Verbnet frame): " + tree.lexical_unit.lemma
 
         plu = PossibleLU()
         plu.tree = tree

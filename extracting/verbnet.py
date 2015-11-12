@@ -14,12 +14,12 @@ class Verb(object):
     def __init__(self):
         self.lemma = None
         self.frame = None
-
+        self.siblings = None
 
 def read_verbnet(verbnet_folder, verbose, language):
     if verbose: print "Reading Verbnet..."
 
-	# Define list of Verb objects.
+    # Define list of Verb objects.
     verbnet = []
     for filename in os.listdir(verbnet_folder):
         soup = BeautifulSoup(open(verbnet_folder + "/" + filename), "xml")
