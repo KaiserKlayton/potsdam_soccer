@@ -1,15 +1,8 @@
-# Potsdam Soccer Project
+# Potsdam Soccer
 
-<<<<<<< HEAD
-### System Setup
-```
-1. ANNA Dependency Parser and parse.sh in ~/parser/.
-3. Input tickers in ~/data/input/.
-4. Output written to ~/data/output/[datetime]/out.
-```
-=======
 ## Overview
-Using natural language processng and answer set solving techniqzes this project reads in multiple tickers and by information extraction and merging them in an intelligent way we output a comprehensive summary of the given tickers.
+This project deals with text summarization for soccer tickers via natural language processing and answer 
+-set solving techniques. The resulting system utilizes Python and ASP in order to read in multiple tickers, extract information from them, merge them, and output a comprehensive summary.
 
 ## Usage
 ```
@@ -27,28 +20,27 @@ optional arguments:
 ```
 
 ## Requirements
-We assume to have a running python verion 2.7 on the system. Further we use the well known anna dependecy parser. This parser needs to be placed in the parser folder. We used anna-3.3 for the english ticker messages. Following structure will be assumed that the program works correctly.
+We assume to have a running Python verion 2.7 on the system. Furthermore, we use the well known anna dependecy parser. This parser needs to be placed in ~/parser/. We used anna-3.3 for the english ticker messages. The following structure will be assumed for the program to run correctly:
 ```
 parser
 ├── anna-3.3.jar
 ├── anna-3.61.jar
 ├── models.de
-│   ├── lemmatizer.model
-│   ├── mtag.model
-│   ├── parser.model
-│   └── tagger.model
+│   ├── lemmatizer.model
+│   ├── mtag.model
+│   ├── parser.model
+│   └── tagger.model
 ├── models.en
-│   ├── lemmatizer.model
-│   ├── parser.model
-│   └── tagger.model
+│   ├── lemmatizer.model
+│   ├── parser.model
+│   └── tagger.model
 ├── parse2.sh
 ├── parse.sh
 ```
 
 ## Data
 ### Input
-All ticker files need to be placed in the same directory. The directory is easily selected using the commandline argument `-- tickers DIR`.
+All ticker files need to be placed in the same directory. This directory is easily selected using the commandline argument `-- tickers DIR`.
 
 ### Output
-The results are stored in the data/output folder. Each run gets its own subdir named by a timestamp.
->>>>>>> 666bb3d0667d72e42d609c94341209a89a1a46ac
+The results are stored in ~/data/output/. Each run gets its own subdir named by a timestamp.
