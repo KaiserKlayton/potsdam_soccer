@@ -1,7 +1,8 @@
 # potsdam_soccer
 
-put parser into root folder under "parser", so parse.sh will be available under "parser/parse.sh"
-
-put tickers in "data/input/" folder
-
-results stored in "data/output/[datetime]/out" folder
+### System Setup
+```
+1. ANNA Dependency Parser and parse.sh in ~/parser/.
+3. Input tickers in ~/data/input/.
+4. Output written to ~/data/output/[datetime]/out.
+```
